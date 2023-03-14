@@ -10,6 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import NoSuchWindowException
+from selenium.common.exceptions import ElementClickInterceptedException
 
 # selenium for interacting with the webpage, being a dynamic one
 
@@ -191,6 +193,10 @@ try:
 except StaleElementReferenceException:
     pass
 except NoSuchElementException:
+    pass
+except NoSuchWindowException:
+    pass
+except ElementClickInterceptedException:
     pass
 
 # close the webdriver after we are finished itterating
